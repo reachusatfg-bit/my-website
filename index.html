@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley's Birthday Adventure</title>
+</head>
+<body>
+<div class="app">
+  <div class="banner"><img src="images/ChatGPT Image birthday banner.png" alt="image"></div>
+  <div class="card">
+    <div class="bases" id="bases">
+      <div class="base active" data-b="0"></div>
+      <div class="base" data-b="1"></div>
+      <div class="base" data-b="2"></div>
+      <div class="base" data-b="3"></div>
+    </div>
+
+    <!-- Step 0: Welcome -->
+    <div class="step active" id="step0">
+      <h1>A birthday adventure, just for Ashley</h1>
+      <p>Happy early birthday, Ashley! I know your actual birthday isn't until Wednesday, but I wanted to take the opportunity to celebrate you. To keep things completely relaxed, I made this little game so you can call all the plays. No pressure at all, just a sweet way for us to hang out and get to know each other. Let's choose an adventure...</p>
+      <h2 style="margin-top:22px;">Are you ready to step up to the plate, Ashley?</h2>
+      <button class="choice-btn" onclick="goYes()">Yes! Let's plan a celebration 💚</button>
+      <button class="choice-btn" onclick="goChatFirst()">I'd love to, but let's just chat about it in person first 😊</button>
+    </div>
+
+    <!-- Step 1: Date & Time -->
+    <div class="step" id="step1">
+      <h2>When are we playing ball? ⏰</h2>
+      
+      <div class="field-group">
+        <label for="dateInput">Pick a day that works best for your schedule</label>
+        <input type="date" id="dateInput">
+      </div>
+      <div class="field-group">
+        <label for="timeInput">What time should the first pitch be?</label>
+        <input type="time" id="timeInput">
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="showStep(0)">Back</button>
+        <button class="btn btn-primary" onclick="showStep(2)">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Vibes -->
+    <div class="step" id="step2">
+      <h2>Choose your favorite birthday vibes 🎡</h2>
+      <p style="margin-top:-8px;">Pick one, or a few to combine them.</p>
+      <div class="vibes-grid" id="vibesGrid"></div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="showStep(1)">Back</button>
+        <button class="btn btn-primary" onclick="showStep(3)">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Mix and match -->
+    <div class="step" id="step3">
+      <h2>Your executive decision 👑</h2>
+      <div class="field-group">
+        <label for="mixInput">Mix and match, dietary notes, or song requests for the car ride</label>
+        <textarea id="mixInput" placeholder="e.g. Bowling + sushi, no shellfish please, and anything by..."></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="showStep(2)">Back</button>
+        <button class="btn btn-primary" onclick="submitAll()">Send my answers 🎂</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Thank you -->
+    <div class="step" id="step4">
+      <div class="thankyou">
+        <div class="big-emoji">🎉</div>
+        <h1>Perfect, thank you Ashley!</h1>
+        <p id="thanksMsg">Your answers are ready to send.</p>
+        <div class="summary" id="summaryBox"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
